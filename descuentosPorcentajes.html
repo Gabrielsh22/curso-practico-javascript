@@ -4,10 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> family=Quicksand:wght@300;500;700&
     <title>Descuentos y Porcentajes</title>
+    <style>
+        :root{
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+        }
+        .contenedorPrincipal{
+            width: 100%;
+            height: 100hv;
+            display: grid;
+            place-items: center;
+        }
+        .title{
+            font-size: var(--lg);
+            margin-bottom: 36px;
+        }
+        .formContainer{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 400px;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+        }
+        .label{
+            font-size: var(--md);
+            font-weight: bold;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        .input{
+            background-color: var(--very-light-pink);
+            border: none;
+            border-radius: 8px;
+            height:20px;
+            font-size: var(--md);
+            padding: 6px;
+            margin-bottom: 10px;
+        }
+        .inputDiscount{
+            margin-bottom: 16px;
+        }
+        .primaryButton{
+            background-color: var(--hospital-green);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            height: 24px;
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--sm);
+            font-weight: bold;
+        }
+        .resultado{
+            font-size: var(--lg);
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+ <div class="contenedorPrincipal">
+   <div class="title">
     <h1>Descuentos y Porcentajes</h1>
+   </div>
+    <section class="formContainer">
+        <form action="/" class="form">
+            <label for="InputPrice" class="label">
+                Escribe el precio de tu producto:
+            </label>
+            <input type="number" name="" id="InputPrice" class="input"><br>
+
+            <label for="InputDiscount" class="label">
+                Escribe el descuento de tu producto:
+            </label>
+            <input type="number" name="" id="InputDiscount" class="input inputDiscount"><br>
+
+            <button type="button" onclick="calculoPrecioDescuento()" class="primaryButton">
+                Calcular el precio con descuento
+            </button>
+            <p id="ResultP" class="resultado"></p>
+        </form>
+    </section>
+ </div>
 
     <script src="descuentosPorcentajes.js"></script>
 </body>
